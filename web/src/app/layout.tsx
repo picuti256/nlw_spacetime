@@ -4,11 +4,12 @@ import {
   Bai_Jamjuree as BaiJamjuree,
 } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], variable: "--font-robot" });
-const baiJamjure = BaiJamjuree({
+const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto" });
+
+const baiJamjuree = BaiJamjuree({
   subsets: ["latin"],
   weight: "700",
-  variable: "--font-baijamjuree",
+  variable: "--font-bai-jamjuree",
 });
 
 export const metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${baiJamjure.variable} bg-gray-900 font-sans text-gray-100`}
+        className={`${roboto.variable} ${baiJamjuree.variable} bg-gray-900 font-sans text-gray-100`}
       >
         {children}
       </body>

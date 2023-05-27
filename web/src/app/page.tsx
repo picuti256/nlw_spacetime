@@ -1,6 +1,7 @@
 import { User } from "lucide-react";
 import Image from "next/image";
 
+// Aqui passando o caminho onde se encontra nossa imagem
 import nlwLogo from "../assets/nlw-spacetime-logo.svg";
 
 export default function Home() {
@@ -30,8 +31,30 @@ export default function Home() {
         </a>
 
         {/* Hero */}
-        <div>
+        <div className="space-y-5 ">
+          {/* No next utilizamos imagens fazendo importação como componentes */}
           <Image src={nlwLogo} alt="nlw Space Time" />
+          <div className="max-w-[420px] space-y-1">
+            <h1 className="text-5xl font-bold leading-tight text-gray-50">
+              Sua cápsula do tempo
+            </h1>
+            <p className="text-lg leading-relaxed">
+              Colecione momentos marcantes da sua jornada e compartilha (se
+              quiser) com o mundo!
+            </p>
+          </div>
+          <a
+            href=""
+            className="inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-green-600"
+          >
+            Cadastrar lembrança
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-sm leading-relaxed text-gray-200">
+          Feito por <a href="https://github.com/picuti256" className="underline hover:text-gray-100 " target="_blank" rel="noreferrer">Giovanne Piçuti</a>,
+          na NLW da <a href="https://rocketseat.com.br" className="underline hover:text-gray-100 " target="_blank" rel="noreferrer">Rocketseat</a>
         </div>
       </div>
 
