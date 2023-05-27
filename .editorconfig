@@ -1,0 +1,6 @@
+# Configurações gerais
+root = true
+
+# Define o estilo de fim de linha como LF
+[*]
+end_of_line = lf

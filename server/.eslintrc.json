@@ -1,3 +1,6 @@
 {
-	"extends": ["@rocketseat/eslint-config/node"]
+	"extends": ["prettier"],
+	"rules": {
+		"prettier/prettier": "error"
+	  }
 }
