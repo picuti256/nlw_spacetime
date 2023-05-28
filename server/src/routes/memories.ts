@@ -15,6 +15,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
         id: memory.id,
         coverUrl: memory.coverUrl,
         excerpt: memory.content.substring(0, 115).concat("..."),
+        createdAt: memory.createAt,
       };
     });
   });
@@ -53,8 +54,46 @@ export async function memoriesRoutes(app: FastifyInstance) {
       },
     });
 
-    return memory
+    return memory;
   });
-  app.put("/memories:id", async () => {});
-  app.delete("/memories:id", async () => {});
+
+  app.put("/memories/:id", async (request) => {
+    const bodySchema = z.object({
+      content: z.string(),
+      coverUrl: z.string(),
+      isPublic: z.coerce.boolean().default(false),
+    });
+    const paramsSchema = z.object({
+      id: z.string().uuid(),
+    });
+    const { id } = paramsSchema.parse(request.params);
+
+    const { content, isPublic, coverUrl } = bodySchema.parse(request.body);
+
+    const memory = await prisma.memory.update({
+      where: {
+        id,
+      },
+      data: {
+        content,
+        coverUrl,
+        isPublic,
+      },
+    });
+
+    return memory;
+  });
+
+  app.delete("/memories:id", async (request) => {
+    const paramsSchema = z.object({
+      id: z.string().uuid(),
+    });
+    const { id } = paramsSchema.parse(request.params);
+
+    await prisma.memory.delete({
+      where: {
+        id,
+      },
+    });
+  });
 }
