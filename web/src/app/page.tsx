@@ -17,7 +17,7 @@ export default function Home() {
 
         {/* Sign In */}
         <a
-          href=""
+          href={`http://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENTE_ID}`}
           className="flex items-center gap-3 text-left transition-colors hover:text-gray-50"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
@@ -44,7 +44,7 @@ export default function Home() {
             </p>
           </div>
           <a
-            href=""
+            href="/"
             className="inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-green-600"
           >
             Cadastrar lembrança
@@ -53,8 +53,24 @@ export default function Home() {
 
         {/* Copyright */}
         <div className="text-sm leading-relaxed text-gray-200">
-          Feito por <a href="https://github.com/picuti256" className="underline hover:text-gray-100 " target="_blank" rel="noreferrer">Giovanne Piçuti</a>,
-          na NLW da <a href="https://rocketseat.com.br" className="underline hover:text-gray-100 " target="_blank" rel="noreferrer">Rocketseat</a>
+          Feito por{" "}
+          <a
+            href="https://github.com/picuti256"
+            className="underline hover:text-gray-100 "
+            target="_blank"
+            rel="noreferrer"
+          >
+            Giovanne Piçuti
+          </a>
+          , na NLW da{" "}
+          <a
+            href="https://rocketseat.com.br"
+            className="underline hover:text-gray-100 "
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rocketseat
+          </a>
         </div>
       </div>
 
