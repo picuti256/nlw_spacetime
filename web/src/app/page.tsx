@@ -1,9 +1,13 @@
-import { Copyright } from "../../Components/Copyright";
-import { EmptyMemories } from "../../Components/EmptyMemories";
-import { Hero } from "../../Components/Hero";
-import { Signin } from "../../Components/Signin";
+import { cookies } from "next/headers";
+
+import { Copyright } from "../Components/Copyright";
+import { EmptyMemories } from "../Components/EmptyMemories";
+import { Hero } from "../Components/Hero";
+import { Signin } from "../Components/Signin";
 
 export default function Home() {
+  const isAuthenticated = cookies().has("token");
+
   return (
     <main className="grid min-h-screen grid-cols-2">
       {/* Left */}

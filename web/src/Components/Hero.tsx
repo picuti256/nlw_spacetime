@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Aqui passando o caminho onde se encontra nossa imagem
-import nlwLogo from "../src/assets/nlw-spacetime-logo.svg";
+import nlwLogo from "../assets/nlw-spacetime-logo.svg";
 
 export function Hero() {
   return (
