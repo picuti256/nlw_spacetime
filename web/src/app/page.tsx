@@ -4,6 +4,7 @@ import { Copyright } from "../Components/Copyright";
 import { EmptyMemories } from "../Components/EmptyMemories";
 import { Hero } from "../Components/Hero";
 import { Signin } from "../Components/Signin";
+import { Profile } from "@/Components/Profile";
 
 export default function Home() {
   const isAuthenticated = cookies().has("token");
@@ -18,7 +19,7 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        <Signin />
+        {isAuthenticated ? <Profile /> : <Signin />}
         <Hero />
         <Copyright />
       </div>
